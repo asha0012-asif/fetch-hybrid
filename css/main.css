@@ -1,0 +1,164 @@
+:root {
+    --color-primary: #343A40;
+    --color-primary--light: #586e84;
+    --color-secondary: #ADB5BD;
+}
+
+/* --- CONTAINER --- */
+.container {
+    width: (65rem, 100%);
+    padding-inline: auto;
+    margin: 0 auto;
+}
+
+/* --- TYPE HIERARCHY --- */
+h1 {
+    font-size: 1.476rem;
+    line-height: 1.3;
+}
+
+h2 {
+    font-size: 1.383rem;
+    line-height: 1.3;
+}
+
+/* --- BUTTONS --- */
+.btn {
+    /* common styles */
+  display: inline-block;
+  padding: 0.5rem;
+  background-color: var(--color-primary);
+  border: 0.125rem solid var(--color-primary);
+  color: #fff;
+  border-radius: 0.25em;
+
+  /* link necessary styles */
+  text-decoration: none;
+
+  /* button necessary styles */
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background-color: var(--color-primary--light);
+  border-color: var(--color-primary--light);
+  color: #fff;
+}
+
+/* --- IMAGES --- */
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 3 / 2;
+}
+
+/* --- FORM - GENERAL --- */
+input {
+    padding: 0.5rem;
+}
+
+/* --- HEADER --- */
+.header .container {
+    padding: 2rem 1.5rem;
+    background-color: var(--color-primary);
+
+    text-align: center;
+}
+
+.header__title {
+    color: white;
+}
+
+/* --- SEARCH FORM SECTION --- */
+.search .container {
+    padding: 1.5rem;
+    background-color: var(--color-secondary);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+}
+
+.form-grid input {
+    grid-column: span 2;
+}
+
+.form-grid .btn {
+    grid-column: span 1;
+}
+
+/* --- IMAGE DISPLAY SECTION --- */
+.image-display .container {
+    padding: 3rem 1.5rem;
+}
+
+#message {
+    color: #000;
+    margin-bottom: 1rem;
+}
+
+.image-list {
+    list-style-type: none;
+    padding: 0;
+
+    display: grid;
+    --cols: 1;
+    grid-template-columns: repeat(var(--cols), 1fr);
+    gap: 1rem;
+}
+
+/* ------ TABLET SIZES + ------ */
+@media only screen and (min-width: 45rem ) {
+    h1 {
+        font-size: 2.027rem;
+    }
+    
+    h2 {
+        font-size: 1.802rem;
+    }
+
+    /* --- SEARCH FORM SECTION --- */
+    .form-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .form-grid input {
+        grid-column: span 2;
+    }
+
+    .form-grid .btn {
+        grid-column: span 1;
+    }
+
+    /* --- IMAGE DISPLAY SECTION --- */
+    .image-list {
+        --cols: 2;
+    }
+}
+
+/* ------ LAPTOP SIZES + ------ */
+@media only screen and (min-width: 65rem) {
+    /* --- SEARCH FORM SECTION --- */
+    .form-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .form-grid input {
+        grid-column: span 2 / 4;
+    }
+
+    .form-grid .btn {
+        grid-column: span 1;
+    }
+
+    /* --- IMAGE DISPLAY SECTION --- */
+    .image-list {
+        --cols: 3;
+    }
+}
